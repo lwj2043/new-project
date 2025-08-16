@@ -1,6 +1,6 @@
 package 코테;
 import java.util.Scanner;
-
+//단위 변환 2 문제
 public class Main {
 
     public static void main(String[] args) {
