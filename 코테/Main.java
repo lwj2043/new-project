@@ -1,27 +1,29 @@
 package 코테;
+
 import java.util.Scanner;
-//단위 변환 2 문제
+
 public class Main {
 
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        int num = sc.nextInt();
-        int pow = sc.nextInt();
-        sc.close();
-        StringBuilder answer = new StringBuilder();
-        while (num > 0) {
-            int result = num % pow;
+        
+        int T = sc.nextInt();
+        for(int i = 0; i < T; i++) {
+            int[] answer = new int[4];
+            int num = sc.nextInt();
+            answer[0] = num / 25;
+            num %= 25;
+            answer[1] = num / 10;
+            num %= 10;
+            answer[2] = num / 5;
+            num %= 5;
+            answer[3] = num / 1;
+            num %= 1;
 
-            if (result < 10) {
-                answer.append( (char) (result + '0') );
-            } else {
-                answer.append( (char) (result - 10 + 'A') );
-            }
-            num = num / pow;
+            System.out.println(answer[0] + " " + answer[1] + " " + answer[2] + " " + answer[3]);
         }
-
-        System.out.println(answer.reverse().toString());
+        
         sc.close();
     }
 }
